@@ -10,6 +10,7 @@ const BACKEND_URL = 'http://loclhost:' + BACKEND_PORT +'/';
   providedIn: 'root',
 })
 export class ApiService {
+  id: string = '';
 
   constructor(private client: HttpClient) {
 
@@ -19,8 +20,15 @@ export class ApiService {
     return this.client.post(BACKEND_URL + '/createWeeklyMeal', {
       data
     }).pipe(
-      map(res => res)
+      map(res => {
+        this.id = 'idSet';
+        return res;
+      })
     )
+  }
+
+  getId(): false | string {
+    return this.id != '' && this.id;
   }
 
   getMenu(id: string) {
