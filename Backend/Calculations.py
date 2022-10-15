@@ -1,17 +1,4 @@
-from flask import Flask
-
 import math
-
-app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-    return "hello world"
-
-if __name__ == "__main__":
-    app.run()
-
-
 
 
 def inToMeters(inches):
@@ -70,4 +57,3 @@ fish = ["salmon", "tuna", ""]
 
 
 allergies = [nuts, dairyProducts, fish, gluten, ]
-
