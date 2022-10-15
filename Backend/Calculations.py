@@ -46,14 +46,15 @@ def numFatsGrams(numCal):
 
 
 
+
+
+
+nuts = ["peanut", "almond", "walnut", "cashew"]
 dairyProducts = ["cheese", "butter", "milk", "yogurt"]
-
-
-nuts = [""]
-fish = ["salmon", "tuna", ""]
-gluten = []
-wheats = []
-shellFish = []
+fish = ["salmon", "tuna", "cod", "fish"]
+gluten = ["gluten"]
+wheats = ["wheat"]
+shellFish = ["crab", "lobster", "prawn", "shrimp", "clam"]
 
 
 allergies = [nuts, dairyProducts, fish, gluten, wheats, shellFish]
