@@ -1,0 +1,12 @@
+Diet Planner
+ 	- finds foods from each category
+	- looks at nearby stores
+	- create shopping list
+
+Info:
+- dietary restr
+- gender
+- age
+- height
+- weight
+- budget
