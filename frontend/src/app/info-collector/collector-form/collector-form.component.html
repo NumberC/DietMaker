@@ -29,7 +29,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div>
+    <!-- <div>
       <mat-form-field appearance="fill" class="w-full">
         <mat-label>Location</mat-label>
         <input type="text" matInput formControlName="location" [matAutocomplete]="auto">
@@ -37,7 +37,7 @@
         <mat-option *ngFor="let state of this.states" [value]="state">{{state}}</mat-option>
         </mat-autocomplete>
       </mat-form-field>
-    </div>
+    </div> -->
     <div>
       <mat-form-field appearance="fill" class="w-full">
         <mat-label>Budget Limit</mat-label>
@@ -47,7 +47,29 @@
     <div>
       <mat-form-field appearance="fill" class="w-full">
         <mat-label>Dietary Restrictions</mat-label>
-        <input type="text" matInput>
+        <mat-chip-list #chipList>
+          <mat-chip
+            *ngFor="let fruit of fruits"
+            (removed)="remove(fruit)"
+            color="primary" [selected]="true">
+            {{fruit}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input
+            #fruitInput
+            [formControl]="fruitCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+            {{fruit}}
+          </mat-option>
+        </mat-autocomplete>
       </mat-form-field>
     </div>
     <div align="end">
