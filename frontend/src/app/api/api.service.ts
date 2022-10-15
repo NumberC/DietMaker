@@ -4,7 +4,7 @@ import { UserData } from './api.types';
 import { map } from 'rxjs'
 
 const BACKEND_PORT = 5000;
-const BACKEND_URL = 'http://loclhost:' + BACKEND_PORT +'/';
+const BACKEND_URL = 'http://10.24.2.130:' + BACKEND_PORT +'/';
 
 /*
 Array of 7 arrays. Each of those arrays has 3 arrays for each meal.
