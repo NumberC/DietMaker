@@ -71,8 +71,12 @@ dietaryRestrictions = {
     "egg" : "egg",
     "soy" : "soy",
     "fish" : "fish",
-    "sesame" : "sesame"
- 
+    "sesame" : "sesame",
+    "vegan" : "vegan",
+    "vegetarian" : "vegetarian",
+    "keto" : "keto",
+    "low carb" :"low carb",
+   
 }
 
 
