@@ -55,4 +55,8 @@ def filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein
     filteredFoods = filterFoodsByProtein(filteredFoods, desiredProtein)
     return filteredFoods
 
-breakfastFoods = ["egg", "bacon", "sausage", "pancake", "waffle", "bagel", "toast", "cereal", "muffin", "milk"]
+foodDict = {
+    "breakfast" : ["egg", "bacon", "sausage", "pancake", "waffle", "bagel", "toast", "cereal", "muffin", "milk"],
+    "lunch": ["sandwich", "taco", "burger", "pizza", "salad", "wrap", "tuna", "burrito", "hot dog", "fries", "fruit"],
+    "dinner": ["soup", "steak", "chicken", "roast", "porkchop", "spaghetti", "rice", ""]
+}
