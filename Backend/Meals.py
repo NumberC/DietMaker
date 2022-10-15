@@ -31,9 +31,6 @@ def getDinnerFoods(foodData):
     secondDinnerFood = getARandomFoodForTimeOfDay(foodData, foodDict["dinner"], [firstDinnerFood])
     return [firstDinnerFood, secondDinnerFood]
 
-# dietary restrictions
-
-
 # TESTING
 desiredCal = Calculations.numCalorie(18, "male", 60, 180)
 desiredCarbs = Calculations.numCarbsGrams(desiredCal)
