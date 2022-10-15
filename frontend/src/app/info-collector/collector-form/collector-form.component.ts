@@ -20,7 +20,7 @@ export class CollectorFormComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   filteredFruits: Observable<string[]>;
   fruits: string[] = [];
-  allFruits: string[] = ['peanuts', 'tree nuts','wheat / has celiac disease', 'milk / is lactose intolerant', 'eggs', 'soy', 'fish', 'shellfish', 'sesame seeds'];
+  allFruits: string[] = ['peanuts', 'tree nuts','wheat / has celiac disease', 'milk / is lactose intolerant', 'eggs', 'soy', 'fish', 'shellfish', 'sesame seeds', 'vegan', 'vegetarian', 'keto', 'low carb'];
   fruitCtrl = new FormControl('');
 
   @ViewChild('fruitInput') fruitInput?: ElementRef<HTMLInputElement>;
