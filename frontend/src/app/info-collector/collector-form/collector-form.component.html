@@ -1,0 +1,57 @@
+<form [formGroup]="this.control" (submit)="this.handleSubmit()">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Height</mat-label>
+        <input type="number" matInput formControlName="height">
+        <mat-hint>please enter height in inches</mat-hint>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Weight</mat-label>
+        <input type="number" matInput formControlName="weight">
+        <mat-hint> please enter weight in pounds</mat-hint>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Age</mat-label>
+        <input type="number" matInput formControlName="age">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Sex</mat-label>
+        <mat-select formControlName="sex">
+          <mat-option value="male"> Male </mat-option>
+          <mat-option value="female"> Female </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Location</mat-label>
+        <input type="text" matInput formControlName="location" [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let state of this.states" [value]="state">{{state}}</mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Budget Limit</mat-label>
+        <input type="number" matInput formControlName="budget">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Dietary Restrictions</mat-label>
+        <input type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div align="end">
+      <button mat-raised-button color="primary"> Save </button>
+    </div>
+  </div>
+</form>

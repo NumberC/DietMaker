@@ -13,12 +13,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { InfoCollectorComponent } from './info-collector/info-collector.component';
 import {MatCardModule} from '@angular/material/card';
+import { CollectorFormComponent } from './info-collector/collector-form/collector-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    InfoCollectorComponent
+    InfoCollectorComponent,
+    CollectorFormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,13 @@ import {MatCardModule} from '@angular/material/card';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
