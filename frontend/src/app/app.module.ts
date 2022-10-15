@@ -21,13 +21,16 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatChipsModule} from '@angular/material/chips';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './api/api.service';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     InfoCollectorComponent,
-    CollectorFormComponent
+    CollectorFormComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +49,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatSelectModule,
     MatAutocompleteModule,
-    MatChipsModule
+    MatChipsModule,
+    HttpClientModule
   ],
-  providers: [HttpClientModule],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,8 @@ import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { ApiService } from 'src/app/api/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-collector-form',
@@ -23,8 +25,8 @@ export class CollectorFormComponent implements OnInit {
 
   @ViewChild('fruitInput') fruitInput?: ElementRef<HTMLInputElement>;
 
-  constructor(private fb: FormBuilder) {
-    this.control = fb.group({
+  constructor(private fb: FormBuilder, private api: ApiService, private router: Router) {
+    this.control = this.fb.group({
       height: [null],
       weight: [null],
       age: [null],
@@ -74,6 +76,12 @@ export class CollectorFormComponent implements OnInit {
 
   handleSubmit() {
     console.log(this.control.value, this.fruits);
+    const data = this.control.value;
+    data.dietaryRestrictions = this.fruits;
+    this.api.sendInfo(data)
+    .subscribe(res => {
+      this.router.navigate(['/view'])
+    })
   }
 
   private _filter(value: string): string[] {
