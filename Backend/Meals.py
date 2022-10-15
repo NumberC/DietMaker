@@ -32,16 +32,12 @@ def getDinnerFoods(foodData):
     return [firstDinnerFood, secondDinnerFood]
 
 # TESTING
-desiredCal = Calculations.numCalorie(18, "male", 60, 180)
-desiredCarbs = Calculations.numCarbsGrams(desiredCal)
-desiredProtein = Calculations.numProteinGrams(180)
-desiredFat = Calculations.numFatsGrams(desiredCal)
+# desiredCal = Calculations.numCalorie(18, "male", 60, 180)
+# desiredCarbs = Calculations.numCarbsGrams(desiredCal)
+# desiredProtein = Calculations.numProteinGrams(180)
+# desiredFat = Calculations.numFatsGrams(desiredCal)
 
-foodData = FDC.filterFoodByEverything(desiredCal, desiredCarbs, desiredProtein, desiredFat)
-
-print(getBreakfastFoods(foodData))
-print(getLunchFoods(foodData))
-print(getDinnerFoods(foodData))
+# foodData = FDC.filterFoodByEverything(desiredCal, desiredCarbs, desiredProtein, desiredFat)
 
 def getWeeklyMealPlan(foodData):
     mealsPerDay = []

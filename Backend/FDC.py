@@ -42,15 +42,41 @@ def filterFoodsByCarbs(foodData, maxCarbs):
 def filterFoodsByProtein(foodData, maxProtein):
     return filterFoodsByNutrient(foodData, "Protein", maxProtein)
 
-def filterFoodsByDietaryRestriction (foodData, restrictions):
-    filteredFoods = []
+# dietary restrictons
+dietaryRestrictions = {
+    "peanuts" : ["nut"],
+    "tree nuts" : ["nut", "almond", "cashew"],
+    "nut" : ["nut", "almond", "cashew"],
+    "wheat / celiac disease" : ["wheat"],
+    "wheat" : ["wheat"], 
+    "milk / lactose intolerant" : ["milk", "cheese", "chocolate"],
+    "milk" : ["milk", "cheese", "chocolate"],
+    "cheese" : ["milk", "cheese"],
+    "egg" : ["egg"],
+    "soy" : ["soy"],
+    "fish" : ["fish"],
+    "sesame" : ["sesame"]
+    
+ 
+}
+
+def getRedfinedRestrictionsFromRawRestrictions(rawRestrictions):
+    redefinedRestrictions = []
+    for restriction in rawRestrictions:
+        redefinedRestrictions += dietaryRestrictions[restriction]
+    
+    # remove duplicate entries in the list
+    return set(redefinedRestrictions)
+
+def filterFoodsByDietaryRestriction (foodData, redefinedRestrictions):    
+    filteredFoods = foodData
     for foodItem in foodData:
-        for restriction in restrictions:
-            if restriction.lower()
+        for restriction in redefinedRestrictions:
+            if restriction in foodItem["description"].lower():
+                filteredFoods.remove(foodItem)
+    return filteredFoods
             
-
-
-def filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein, desiredFat):
+def filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein, desiredFat, rawDietaryRestrictions):
     filteredFoods = filterFoodsByCalories(foodData, desiredCalories)
     filteredFoods = filterFoodsByCarbs(filteredFoods, desiredCarbohydrates)
     filteredFoods = filterFoodsByFat(filteredFoods, desiredFat)
@@ -71,12 +97,8 @@ dietaryRestrictions = {
     "egg" : "egg",
     "soy" : "soy",
     "fish" : "fish",
-    "sesame" : "sesame",
-    "vegan" : "vegan",
-    "vegetarian" : "vegetarian",
-    "keto" : "keto",
-    "low carb" :"low carb",
-   
+    "sesame" : "sesame"
+ 
 }
 
 
