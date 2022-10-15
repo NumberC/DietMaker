@@ -1,20 +1,32 @@
 import json
-from flask import Flask, jsonify, request
-import requests
+import uuid
+from flask import Flask, request
+import FDC
+import Meals
+import Calculations
 
-import math
+def uploadMealPlanToDatabase(weeklyMealPlan):
+    databaseFile = open("weeklyPlansDatabase.json", "rw")
+    databaseJSON = json.load(databaseFile)
+
+    id = uuid.uuid4()
+    databaseJSON[id] = weeklyMealPlan
+    json.dump(databaseJSON, databaseFile)
+
+    return id
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return "hello world"
+@app.route("/getWeeklyMeal")
+def getWeeklyMealPlan():
+    databaseFile = open("weeklyPlansDatabase.json")
+    databaseJSON = json.load(databaseFile)
 
-if __name__ == "__main__":
-    app.run()
+    id = request.data["id"]
+    return databaseJSON[id]
 
-@app.route('/', methods=['POST'])
-def query_records():
+@app.route("/createWeeklyMeal")
+def createWeeklyMealPlan():
     print(request.data)
     data = json.loads(request.data)
     height = data['height']
@@ -29,7 +41,17 @@ def query_records():
     print("sex: " + sex)
     print("dietary restrictions: " + dietaryRestrictions)
 
-@app.route('/', methods=['GET'])
-def query_records():
-    name = request.args.get('name')
-    print(name)
+    desiredCalories = Calculations.numCalorie(age, sex, height, weight)
+    desiredCarbohydrates = Calculations.numCarbsGrams(desiredCalories)
+    desiredProtein = Calculations.numProteinGrams(weight)
+    desiredFat = Calculations.numFatsGrams(desiredCalories)
+
+    foodData = FDC.filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein, desiredFat, dietaryRestrictions)
+    weeklyMealPlan = Meals.getWeeklyMealPlan(foodData)
+
+    mealPlanID = uploadMealPlanToDatabase(weeklyMealPlan)
+
+    return mealPlanID
+
+if __name__ == "__main__":
+    app.run()

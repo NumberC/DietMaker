@@ -85,9 +85,3 @@ def filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein
     filteredFoods = filterFoodsByFat(filteredFoods, desiredFat)
     filteredFoods = filterFoodsByProtein(filteredFoods, desiredProtein)
     return filteredFoods
-
-
-
-
-   # ["peanuts", "tree nuts", "wheat / celiac disease", "milk / lactose intolerant", "nut", "wheat", "milk", "cheese", "egg", "soy", "fish", "sesame"]
-
