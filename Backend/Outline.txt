@@ -2,6 +2,10 @@ Diet Planner
  	- finds foods from each category
 	- looks at nearby stores
 	- create shopping list
+	- physical activity
+	- diabetes
+	- if BMI low, eat high calorie/carb
+	- if BMI high, low carb/calorie
 
 Info:
 - dietary restr
