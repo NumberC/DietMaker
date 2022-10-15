@@ -42,9 +42,39 @@ def filterFoodsByCarbs(foodData, maxCarbs):
 def filterFoodsByProtein(foodData, maxProtein):
     return filterFoodsByNutrient(foodData, "Protein", maxProtein)
 
+def filterFoodsByDietaryRestriction (foodData, restrictions):
+    filteredFoods = []
+    for foodItem in foodData:
+        for restriction in restrictions:
+            if restriction.lower()
+            
+
+
 def filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein, desiredFat):
     filteredFoods = filterFoodsByCalories(foodData, desiredCalories)
     filteredFoods = filterFoodsByCarbs(filteredFoods, desiredCarbohydrates)
     filteredFoods = filterFoodsByFat(filteredFoods, desiredFat)
     filteredFoods = filterFoodsByProtein(filteredFoods, desiredProtein)
     return filteredFoods
+
+
+# dietary restrictons
+dietaryRestrictions = {
+    "peanuts" : "nut",
+    "tree nuts" : "nut",
+    "nut" : "nut",
+    "wheat / celiac disease" : "wheat",
+    "wheat" : "wheat", 
+    "milk / lactose intolerant" : "milk",
+    "milk" : "milk",
+    "cheese" : "milk",
+    "egg" : "egg",
+    "soy" : "soy",
+    "fish" : "fish",
+    "sesame" : "sesame"
+ 
+}
+
+
+   # ["peanuts", "tree nuts", "wheat / celiac disease", "milk / lactose intolerant", "nut", "wheat", "milk", "cheese", "egg", "soy", "fish", "sesame"]
+
