@@ -28,9 +28,9 @@ def BMIcheck(BMI):
 
 def numCalorie(age, gender, height, weight): # Using the Henry-Benedict's Formula
     numCal = 0
-    if (gender == "male"):
+    if (gender == "Male"):
         numCal = 66.47 + 6.24*weight + 12.7*height - 6.755*age
-    elif (gender == "female"):
+    elif (gender == "Female"):
         numCal = 655.1 + 4.35*weight + 4.7*height - 6.8*age
     return numCal
 

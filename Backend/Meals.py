@@ -47,3 +47,4 @@ def getWeeklyMealPlan(foodData):
         mealForDay.append(getLunchFoods(foodData))
         mealForDay.append(getDinnerFoods(foodData))
         mealsPerDay.append(mealForDay)
+    return mealsPerDay

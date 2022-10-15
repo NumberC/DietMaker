@@ -1,7 +1,7 @@
 from audioop import cross
 import json
 import uuid
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 import FDC
 import Meals
@@ -56,10 +56,11 @@ def createWeeklyMealPlan():
 
     foodData = FDC.filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein, desiredFat, dietaryRestrictions)
     weeklyMealPlan = Meals.getWeeklyMealPlan(foodData)
+    print(weeklyMealPlan)
 
     mealPlanID = uploadMealPlanToDatabase(weeklyMealPlan)
 
-    return mealPlanID
+    return jsonify(int(mealPlanID))
 
 if __name__ == "__main__":
     app.run()
