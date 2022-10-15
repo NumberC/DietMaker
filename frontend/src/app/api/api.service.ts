@@ -47,7 +47,7 @@ export class ApiService {
   }
 
   sendInfo(data: UserData) {
-    return this.client.post(BACKEND_URL + '/createWeeklyMeal', {
+    return this.client.post(BACKEND_URL + 'createWeeklyMeal', {
       data
     }).pipe(
       map(res => {
@@ -62,6 +62,6 @@ export class ApiService {
   }
 
   getMenu(id: string) {
-    return this.client.post(BACKEND_URL + '/getWeeklyMeal', {id})
+    return this.client.post(BACKEND_URL + 'getWeeklyMeal', {id})
   }
 }

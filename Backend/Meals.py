@@ -43,7 +43,7 @@ def getWeeklyMealPlan(foodData):
     mealsPerDay = []
     for i in range(7):
         mealForDay = []
-        mealForDay[0] = getBreakfastFoods(foodData)
-        mealForDay[1] = getLunchFoods(foodData)
-        mealForDay[2] = getDinnerFoods(foodData)
+        mealForDay.append(getBreakfastFoods(foodData))
+        mealForDay.append(getLunchFoods(foodData))
+        mealForDay.append(getDinnerFoods(foodData))
         mealsPerDay.append(mealForDay)
