@@ -87,22 +87,6 @@ def filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein
     return filteredFoods
 
 
-# dietary restrictons
-dietaryRestrictions = {
-    "peanuts" : "nut",
-    "tree nuts" : "nut",
-    "nut" : "nut",
-    "wheat / celiac disease" : "wheat",
-    "wheat" : "wheat", 
-    "milk / lactose intolerant" : "milk",
-    "milk" : "milk",
-    "cheese" : "milk",
-    "egg" : "egg",
-    "soy" : "soy",
-    "fish" : "fish",
-    "sesame" : "sesame"
- 
-}
 
 
    # ["peanuts", "tree nuts", "wheat / celiac disease", "milk / lactose intolerant", "nut", "wheat", "milk", "cheese", "egg", "soy", "fish", "sesame"]
