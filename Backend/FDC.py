@@ -55,8 +55,12 @@ dietaryRestrictions = {
     "egg" : ["egg"],
     "soy" : ["soy"],
     "fish" : ["fish"],
-    "sesame" : ["sesame"]
- 
+    "sesame" : ["sesame"],
+    "vegan" : ["vegan"],  
+    "vegetarian" : ["vegetarian"],
+    "keto" : ["keto"],
+    "low carb" : ["low carb"]
+  
 }
 
 def getRedfinedRestrictionsFromRawRestrictions(rawRestrictions):
@@ -80,7 +84,10 @@ def filterFoodByEverything(desiredCalories, desiredCarbohydrates, desiredProtein
     filteredFoods = filterFoodsByCarbs(filteredFoods, desiredCarbohydrates)
     filteredFoods = filterFoodsByFat(filteredFoods, desiredFat)
     filteredFoods = filterFoodsByProtein(filteredFoods, desiredProtein)
-   
-    refinedRestrictions = getRedfinedRestrictionsFromRawRestrictions(rawDietaryRestrictions)
-    filteredFoods = filterFoodsByDietaryRestriction(filteredFoods, refinedRestrictions)
     return filteredFoods
+
+
+
+
+   # ["peanuts", "tree nuts", "wheat / celiac disease", "milk / lactose intolerant", "nut", "wheat", "milk", "cheese", "egg", "soy", "fish", "sesame"]
+
