@@ -15,18 +15,18 @@ def calcBMI(pounds, inches):
 
 def BMIcheck(BMI):
     if (BMI < 18.5):
-        return Underweight
+        return "Underweight"
     elif (BMI < 25):
-        return Normal
+        return "Normal"
     elif (BMI < 30):
-        return Overweight
+        return "Overweight"
     elif (BMI < 40):
-        return Obese
+        return "Obese"
     else:
-        return Very_Obese
+        return "Morbidly Obese"
 
 
-def numCalorie(age, gender, height, weight):
+def numCalorie(age, gender, height, weight): # Using the Henry-Benedict's Formula
     numCal = 0
     if (gender == "male"):
         numCal = 66.47 + 6.24*weight + 12.7*height - 6.755*age
@@ -46,14 +46,14 @@ def numFatsGrams(numCal):
 
 
 
-notKeto = [""]
-notVegan = ["meat", "fish", "cheese", ]
-
 dairyProducts = ["cheese", "butter", "milk", "yogurt"]
+
 
 nuts = [""]
 fish = ["salmon", "tuna", ""]
+gluten = []
+wheats = []
+shellFish = []
 
 
-
-allergies = [nuts, dairyProducts, fish, gluten, ]
+allergies = [nuts, dairyProducts, fish, gluten, wheats, shellFish]
